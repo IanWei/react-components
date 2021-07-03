@@ -1,5 +1,11 @@
 import { Select } from './molecules/Select';
+import { GlobalStyle } from './base/globalStyle';
+import { Heading, Description, Tertiary } from './atoms';
 
 export {
-    Select
+    Select,
+    Heading,
+    Tertiary,
+    Description,
+    GlobalStyle
 }
