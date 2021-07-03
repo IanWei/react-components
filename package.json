@@ -5,7 +5,10 @@
   "license": "MIT",
   "scripts": {
     "commit": "yarn git-cz",
-    "format": "prettier --write */**/*.{tsx,ts}"
+    "format": "prettier --write */**/*.{tsx,ts}",
+    "build": "yarn lerna run build",
+    "dev": "yarn lerna run dev",
+    "test": "yarn lerna run test"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
