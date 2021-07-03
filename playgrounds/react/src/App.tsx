@@ -1,13 +1,12 @@
 import React from 'react';
-import { Select, GlobalStyle, Heading, Tertiary } from '@i.w/trip-plan';
+import { GlobalStyle } from '@i.w/trip-plan';
+import { Dashboard } from './features/Dashboard/Dashboard';
 
 export const App = () => {
     return (
         <div>
             <GlobalStyle />
-            <Select />
-            <Heading>Hello</Heading>
-            <Tertiary>World</Tertiary>
+            <Dashboard />
         </div>
     );
 };
