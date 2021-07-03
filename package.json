@@ -1,0 +1,31 @@
+{
+  "name": "@i.w/core",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "commit": "yarn git-cz",
+    "format": "prettier --write */**/*.{tsx,ts}"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^7.0.0",
+    "lerna": "^4.0.0",
+    "prettier": "^2.3.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "playground/*"
+    ]
+  }
+}

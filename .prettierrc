@@ -1,0 +1,15 @@
+{
+  "semi": true,
+  "tabWidth": 4,
+  "endOfLine": "auto",
+  "singleQuote": true,
+  "trailingComma": "none",
+  "overrides": [
+    {
+      "files": ["*.props.ts"],
+      "options": {
+        "semi": false
+      }
+    }
+  ]
+}
