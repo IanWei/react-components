@@ -23,7 +23,7 @@ describe('Checkbox', () => {
     });
 
     it('should render text passed by label prop', () => {
-        expect(screen.getByRole('label')).toHaveTextContent('test');
+        expect(screen.getByTitle('option')).toHaveTextContent('test');
     });
 
     it('should call the handleCheckboxChange prop with the checkbox while it is toggled', () => {

@@ -32,7 +32,7 @@ describe('Options', () => {
     });
 
     it('should render label passed by props', () => {
-        expect(screen.queryByRole('option-label')).toHaveTextContent(
+        expect(screen.queryByTitle('option-title')).toHaveTextContent(
             'priority'
         );
     });

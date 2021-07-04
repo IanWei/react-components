@@ -17,7 +17,7 @@ export const Checkbox: FC<CheckboxProps> = ({
     };
     return (
         <StyledCheckboxWrapper>
-            <StyledLabel role="label">
+            <StyledLabel title="option">
                 <StyledInput
                     role="checkbox"
                     aria-label={label}

@@ -8,7 +8,7 @@ exports[`Options should test the snapshot of the component 1`] = `
   >
     <p
       class="sc-dlnjwi sc-eCApnc ea-dfCT cqGmaj"
-      role="option-label"
+      title="option-title"
     >
       priority
     </p>
@@ -17,7 +17,7 @@ exports[`Options should test the snapshot of the component 1`] = `
     >
       <label
         class="sc-gKAaRy dOQByB"
-        role="label"
+        title="option"
       >
         <input
           aria-checked="false"
@@ -34,7 +34,7 @@ exports[`Options should test the snapshot of the component 1`] = `
     >
       <label
         class="sc-gKAaRy dOQByB"
-        role="label"
+        title="option"
       >
         <input
           aria-checked="false"
@@ -51,7 +51,7 @@ exports[`Options should test the snapshot of the component 1`] = `
     >
       <label
         class="sc-gKAaRy dOQByB"
-        role="label"
+        title="option"
       >
         <input
           aria-checked="false"

@@ -7,7 +7,7 @@ exports[`Checkbox should test the snapshot of the base state 1`] = `
   >
     <label
       class="sc-gtsrHT eqeuFw"
-      role="label"
+      title="option"
     >
       <input
         aria-checked="false"
@@ -29,7 +29,7 @@ exports[`Checkbox should test the snapshot of the toggle state 1`] = `
   >
     <label
       class="sc-gtsrHT eqeuFw"
-      role="label"
+      title="option"
     >
       <input
         aria-checked="true"

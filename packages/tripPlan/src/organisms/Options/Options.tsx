@@ -10,7 +10,7 @@ export const Options: FC<OptionsProps> = ({
 }) => {
     return (
         <StyledOptionWrapper title="options">
-            <StyledOptionLabel role="option-label">{label}</StyledOptionLabel>
+            <StyledOptionLabel title="option-title">{label}</StyledOptionLabel>
             {options.map((option) => (
                 <Checkbox
                     key={option}
