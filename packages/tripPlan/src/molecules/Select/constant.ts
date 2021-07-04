@@ -5,7 +5,8 @@ export const KEY_CODES = {
     UP_ARROW: 'ArrowUp',
     LEFT_ARROW: 'ArrowLeft',
     RIGHT_ARROW: 'ArrowRight',
-    ESC: 'Escape'
+    ESC: 'Escape',
+    TAB: 'Tab'
 }
 
 Object.freeze(KEY_CODES);

@@ -18,6 +18,7 @@ import {
 } from './Select.styled';
 import { ChevronDownIcon } from '../../assets/icons/ChevronDown';
 import { KEY_CODES } from './constant';
+import { getNextOptionIndex, getPrevOptionIndex } from './utils';
 
 export const Select: FC<SelectProps> = ({
     label = 'Please select an option...',
@@ -49,7 +50,7 @@ export const Select: FC<SelectProps> = ({
             const ref = optionsRefs[highlightedIndex];
             ref.current?.focus();
         }
-    }, [isOpen]);
+    }, [isOpen, highlightedIndex]);
 
     const onOptionSelected = (option: SelectOption, optionIndex: number) => {
         handler && handler(option, optionIndex);
@@ -79,6 +80,28 @@ export const Select: FC<SelectProps> = ({
             setIsOpen(false);
         }
     };
+
+    const onOptionKeyDown: KeyboardEventHandler = (event) => {
+        event.preventDefault();
+
+        if (event.key === KEY_CODES.ESC) {
+            setIsOpen(false);
+            buttonRef.current?.focus();
+        }
+
+        if (event.key === KEY_CODES.DOWN_ARROW || (event.key === KEY_CODES.TAB && !event.shiftKey)) {
+            highlightItem(getNextOptionIndex(highlightedIndex, options));
+        }
+
+        if (event.key === KEY_CODES.UP_ARROW || (event.key === KEY_CODES.TAB && event.shiftKey)) {
+            highlightItem(getPrevOptionIndex(highlightedIndex, options));
+        }
+
+        if (new Set([KEY_CODES.SPACE, KEY_CODES.ENTER]).has(event.key)) {
+            onOptionSelected(options[highlightedIndex!], highlightedIndex!);
+            buttonRef.current?.focus();
+        }
+    }
 
     return (
         <StyledSelect>
@@ -119,9 +142,13 @@ export const Select: FC<SelectProps> = ({
                         getOptionRecommendedProps: (overrideProps = {}) => ({
                             key: option.value,
                             ref,
+                            role: 'menuitemradio',
+                            'aria-label': option.label,
+                            'aria-checked': isSelected ? true : undefined,
                             tabIndex: isHighlighted ? -1 : 0,
                             isSelected,
                             isHighlighted,
+                            onKeyDown: onOptionKeyDown,
                             onMouseEnter: () => highlightItem(optionIndex),
                             onMouseLeave: () => highlightItem(null),
                             onClick: () =>
