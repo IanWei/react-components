@@ -22,7 +22,7 @@ exports[`Options should test the snapshot of the component 1`] = `
         <input
           aria-checked="false"
           aria-label="High"
-          class="sc-iCoGMd cHMfVY"
+          class="sc-iCoGMd kumBrw"
           role="checkbox"
           type="checkbox"
         />
@@ -39,7 +39,7 @@ exports[`Options should test the snapshot of the component 1`] = `
         <input
           aria-checked="false"
           aria-label="Normal"
-          class="sc-iCoGMd cHMfVY"
+          class="sc-iCoGMd kumBrw"
           role="checkbox"
           type="checkbox"
         />
@@ -56,7 +56,7 @@ exports[`Options should test the snapshot of the component 1`] = `
         <input
           aria-checked="false"
           aria-label="Low"
-          class="sc-iCoGMd cHMfVY"
+          class="sc-iCoGMd kumBrw"
           role="checkbox"
           type="checkbox"
         />

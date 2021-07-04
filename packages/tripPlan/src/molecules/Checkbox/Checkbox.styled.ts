@@ -31,7 +31,5 @@ export const StyledLabel = styled.label`
 `
 export const StyledInput = styled.input`
     position: absolute;
-    top: 50%;
     left: 0;
-    transform: translateY(-50%);
 `

@@ -6,7 +6,6 @@ import { fontFamily, fontSize, fontWeight } from '../../foundation/typography';
 import { device } from '../../foundation/breakpoints';
 
 export const StyledCalendar = styled.div`
-    margin: 0 auto;
     width: 350px;    
     border: 1px solid ${color.whiteDark};
     box-shadow: ${shadows.base};

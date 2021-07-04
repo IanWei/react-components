@@ -68,9 +68,6 @@ export const Calendar: FC<CalendarProps> = () => {
     };
 
     const isToday = (day: Dayjs) => {
-        if (dayjs(new Date().toLocaleString()).isSame(day, 'date')) {
-            console.log(day.format('DD MM'));
-        }
         return dayjs().isSame(day, 'date');
     };
 
@@ -122,7 +119,7 @@ export const Calendar: FC<CalendarProps> = () => {
                                     beforeCurrentMonth(day) ||
                                     afterCurrentMonth(day)
                                         ? undefined
-                                        : wi * 7 + di + 1
+                                        : 0
                                 }
                             >
                                 <StyledDayStyles dayStyle={dayStyles(day)}>
