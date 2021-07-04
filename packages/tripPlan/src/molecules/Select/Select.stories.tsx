@@ -6,7 +6,7 @@ import { Story } from '@storybook/react';
 export default {
     title: 'Molecules/Select',
     component: Select
-}
+};
 
 const selectOptions = [
     {
@@ -23,9 +23,9 @@ const selectOptions = [
     }
 ];
 
-const Template: Story<SelectProps> = (args) => <Select {...args}/>
+const Template: Story<SelectProps> = (args) => <Select {...args} />;
 
 export const Base: Story<SelectProps> = Template.bind({});
 Base.args = {
     options: selectOptions
-}
+};

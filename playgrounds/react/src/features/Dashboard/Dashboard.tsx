@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { StyledDashboard } from './Dashboard.styled';
-import { Calendar } from '@i.w/trip-plan';
+import { Calendar, Navigate } from '@i.w/trip-plan';
 
 // const selectOptions = [
 //     {
@@ -34,6 +34,7 @@ export const Dashboard: FC = () => {
     // }, [selected]);
     return (
         <StyledDashboard>
+            <Navigate next={() => {}} prev={() => {}}/>
             <Calendar />
         </StyledDashboard>
     );

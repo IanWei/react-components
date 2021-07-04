@@ -40,6 +40,7 @@ export const StyledDayNames = styled.div`
     color: ${color.rollingStone};
     margin: 0 auto;
     align-items: center;
+    border-bottom: 1px solid ${color.rollingStone};
 `
 
 export const StyledWeek = styled.div`

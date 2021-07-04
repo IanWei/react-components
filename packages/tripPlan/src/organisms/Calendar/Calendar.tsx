@@ -13,7 +13,7 @@ import {
 
 export const Calendar: FC<CalendarProps> = () => {
     const [calendar, setCalendar] = useState<Dayjs[][]>([]);
-    const [] = useState()
+    const [] = useState();
 
     const targetDay = dayjs().subtract(2, 'month').format('YYYY-MM-DD');
     useEffect(() => {
@@ -24,39 +24,47 @@ export const Calendar: FC<CalendarProps> = () => {
 
     const calendarBuilder = () => {
         console.log(targetDay);
-        const startDay = dayjs(targetDay || new Date()).startOf('month').startOf('week');
-        const endDay = dayjs(targetDay || new Date()).endOf('month').endOf('week');
+        const startDay = dayjs(targetDay || new Date())
+            .startOf('month')
+            .startOf('week');
+        const endDay = dayjs(targetDay || new Date())
+            .endOf('month')
+            .endOf('week');
         let day = startDay;
-        const _calendar:Dayjs[][] = [];
+        const _calendar: Dayjs[][] = [];
         while (day.isBefore(endDay)) {
-            _calendar.push(Array(7).fill(0).map(() => {
-                day = day.add(24, 'hour');
-                return day
-            }));
+            _calendar.push(
+                Array(7)
+                    .fill(0)
+                    .map(() => {
+                        day = day.add(24, 'hour');
+                        return day;
+                    })
+            );
         }
         setCalendar(_calendar);
-    }
+    };
 
     const isToday = (day: Dayjs) => {
         return dayjs().isSame(day, 'date');
-    }
+    };
 
     const beforeCurrentMonth = (day: Dayjs) => {
         const startDay = dayjs(targetDay).startOf('month').add(24, 'hour');
         return dayjs(day).isBefore(startDay, 'day');
-    }
+    };
 
     const afterCurrentMonth = (day: Dayjs) => {
         const endDay = dayjs(targetDay).endOf('month').add(24, 'hour');
         return dayjs(day).isAfter(endDay, 'day');
-    }
+    };
 
     const dayStyles = (day: Dayjs) => {
-        if (beforeCurrentMonth(day)) return "before";
-        if (afterCurrentMonth(day)) return "after";
-        if (isToday(day)) return "today";
-        return ''
-    }
+        if (beforeCurrentMonth(day)) return 'before';
+        if (afterCurrentMonth(day)) return 'after';
+        if (isToday(day)) return 'today';
+        return '';
+    };
 
     return (
         <StyledCalendar>
@@ -66,7 +74,7 @@ export const Calendar: FC<CalendarProps> = () => {
             </StyledHeader>
             <StyledBody>
                 <StyledDayNames>
-                    {["s", "m", "t", "w", "t", "f", "s"].map((d, ni) => (
+                    {['s', 'm', 't', 'w', 't', 'f', 's'].map((d, ni) => (
                         <StyledWeek key={ni}>{d}</StyledWeek>
                     ))}
                 </StyledDayNames>
@@ -75,7 +83,12 @@ export const Calendar: FC<CalendarProps> = () => {
                         {week.map((day, di) => (
                             <StyledDay
                                 key={di}
-                                tabIndex={(beforeCurrentMonth(day) || afterCurrentMonth(day)) ? undefined : wi * 7 + di + 1}
+                                tabIndex={
+                                    beforeCurrentMonth(day) ||
+                                    afterCurrentMonth(day)
+                                        ? undefined
+                                        : wi * 7 + di + 1
+                                }
                             >
                                 <StyledDayStyles dayStyle={dayStyles(day)}>
                                     {day.format('DD')}
@@ -86,5 +99,5 @@ export const Calendar: FC<CalendarProps> = () => {
                 ))}
             </StyledBody>
         </StyledCalendar>
-    )
-}
+    );
+};
