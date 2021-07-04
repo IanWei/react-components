@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox should test the snapshot of the base state 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdnxRM cLofpq"
+  >
+    <label
+      class="sc-gtsrHT eqeuFw"
+      role="label"
+    >
+      <input
+        aria-checked="false"
+        aria-label="test"
+        class="sc-dlnjwi bUvIpl"
+        title="checkbox"
+        type="checkbox"
+      />
+      test
+    </label>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Checkbox should test the snapshot of the toggle state 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdnxRM cLofpq"
+  >
+    <label
+      class="sc-gtsrHT eqeuFw"
+      role="label"
+    >
+      <input
+        aria-checked="true"
+        aria-label="test"
+        class="sc-dlnjwi bUvIpl"
+        title="checkbox"
+        type="checkbox"
+      />
+      test
+    </label>
+  </div>
+</DocumentFragment>
+`;

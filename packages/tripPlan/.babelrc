@@ -3,12 +3,12 @@
     [
       "@babel/env",
       {
-        "target": {
+        "targets": {
           "node": "current"
         }
-      },
-      "@babel/typescript",
-      "@babel/react"
-    ]
+      }
+    ],
+    "@babel/typescript",
+    "@babel/react"
   ]
 }
