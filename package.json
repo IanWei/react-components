@@ -8,7 +8,8 @@
     "format": "prettier --write */**/*.{tsx,ts}",
     "build": "yarn lerna run build",
     "dev": "yarn lerna run dev",
-    "test": "yarn lerna run test"
+    "test": "yarn lerna run test",
+    "publish": "yarn test && yarn build && yarn lerna publish"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",

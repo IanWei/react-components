@@ -1,4 +1,4 @@
-const none = 0;
+const none = 0; // none
 const xxxs = '.25rem'; //4px
 const xxs = '.5rem'; // 8px
 const xs = '.75rem'; // 12px
