@@ -6,12 +6,15 @@ export const GlobalStyle = createGlobalStyle`
     html {
         box-sizing: border-box;
     }
+    
     *,
     *::before,
     *::after {
+        padding: 0;
         margin: 0;
         box-sizing: inherit;
     }
+    
     body {
         color: ${color.mineShaft};
         background-color: ${color.whiteDark};
