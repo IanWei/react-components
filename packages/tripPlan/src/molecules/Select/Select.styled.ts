@@ -55,17 +55,17 @@ export const StyledMenu = styled.ul<{overlayTop: number, isOpen: boolean}>`
     box-shadow: ${shadows.base};
 `
 
-export const StyledItem = styled.li<{isSelected: boolean}>`
+export const StyledItem = styled.li<{isSelected: boolean, isHighlighted: boolean}>`
     display: flex;
     align-items: center;
     padding: ${spacing.xs};
     font-family: ${fontFamily.body};
     font-size: ${fontSize.base};
     color: ${p => p.isSelected ? color.white : color.mineShaft};
-    background-color: ${p => p.isSelected ? color.orange : color.white};
+    background-color: ${p => p.isSelected ? color.orange : p.isHighlighted ? color.whiteDark : color.white};
     transition: all .1s ease;
     
     &:hover {
-        background-color: ${p => p.isSelected ? color.orange : color.whiteDark};
+        background-color: ${p => p.isSelected ? color.orange : p.isHighlighted ? color.whiteDark : color.white};
     }
 `
