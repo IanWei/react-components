@@ -23,4 +23,5 @@ jobs:
             - name: Visual regression tests
               uses: chromaui/action@v1
               with:
+                  workingDir: packages/tripPlan
                   projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
