@@ -64,7 +64,9 @@ export const Select: FC<SelectProps> = ({
     };
 
     const onButtonKeyDown: KeyboardEventHandler = (event) => {
-        event.preventDefault();
+        if (event.key !== KEY_CODES.TAB) {
+            event.preventDefault();
+        }
 
         if (
             new Set([
@@ -89,11 +91,17 @@ export const Select: FC<SelectProps> = ({
             buttonRef.current?.focus();
         }
 
-        if (event.key === KEY_CODES.DOWN_ARROW || (event.key === KEY_CODES.TAB && !event.shiftKey)) {
+        if (
+            event.key === KEY_CODES.DOWN_ARROW ||
+            (event.key === KEY_CODES.TAB && !event.shiftKey && isOpen)
+        ) {
             highlightItem(getNextOptionIndex(highlightedIndex, options));
         }
 
-        if (event.key === KEY_CODES.UP_ARROW || (event.key === KEY_CODES.TAB && event.shiftKey)) {
+        if (
+            event.key === KEY_CODES.UP_ARROW ||
+            (event.key === KEY_CODES.TAB && event.shiftKey && isOpen)
+        ) {
             highlightItem(getPrevOptionIndex(highlightedIndex, options));
         }
 
@@ -101,7 +109,7 @@ export const Select: FC<SelectProps> = ({
             onOptionSelected(options[highlightedIndex!], highlightedIndex!);
             buttonRef.current?.focus();
         }
-    }
+    };
 
     return (
         <StyledSelect>
@@ -145,7 +153,11 @@ export const Select: FC<SelectProps> = ({
                             role: 'menuitemradio',
                             'aria-label': option.label,
                             'aria-checked': isSelected ? true : undefined,
-                            tabIndex: isHighlighted ? -1 : 0,
+                            tabIndex: !isOpen
+                                ? undefined
+                                : isHighlighted
+                                ? -1
+                                : 0,
                             isSelected,
                             isHighlighted,
                             onKeyDown: onOptionKeyDown,
