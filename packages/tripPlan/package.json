@@ -12,7 +12,8 @@
     "test": "jest --verbose",
     "test:watch": "yarn test --watch",
     "start-storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "chromatic": "npx chromatic --project-token=298cd7ba2c8d"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.14.7",
@@ -29,6 +30,7 @@
     "@types/react-dom": "^17.0.8",
     "@types/styled-components": "^5.1.11",
     "babel-loader": "^8.2.2",
+    "chromatic": "^5.9.2",
     "jest": "^27.0.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
