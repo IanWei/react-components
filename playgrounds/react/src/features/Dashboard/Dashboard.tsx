@@ -2,6 +2,17 @@ import React, { FC, useEffect, useState } from 'react';
 import { StyledDashboard } from './Dashboard.styled';
 import { Checkbox, Heading, Select, Tertiary, Options } from '@i.w/trip-plan';
 
+const selectOptions = [{
+    label: 'Strict Black',
+    value: 'strict-black'
+}, {
+    label: 'Heavenly Green',
+    value: 'heavenly-green'
+}, {
+    label: 'Sweet Pink',
+    value: 'pink'
+}]
+
 export const Dashboard: FC = () => {
     const [selected, setSelected] = useState(new Set());
     const handleToggle = (label: string) => {
@@ -19,7 +30,7 @@ export const Dashboard: FC = () => {
     }, [selected]);
     return (
         <StyledDashboard>
-            <Select />
+            <Select options={selectOptions}/>
             <Heading>Hello</Heading>
             <Tertiary>World</Tertiary>
             <Checkbox label="Ferry" handleCheckboxChange={handleToggle} />
