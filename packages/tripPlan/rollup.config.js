@@ -11,5 +11,5 @@ export default {
     },
     plugins: [Ts()],
     preserveModules: true,
-    external: ['react', 'styled-components']
+    external: ['react', 'styled-components', 'dayjs']
 }

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
 export const StyledDashboard = styled.div`
-    margin: 10% 25%;
+    display: flex;
+    margin: 10% auto;
 `

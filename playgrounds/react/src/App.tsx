@@ -4,7 +4,7 @@ import { Dashboard } from './features/Dashboard/Dashboard';
 
 export const App = () => {
     return (
-        <div>
+        <div style={{width: '100%'}}>
             <GlobalStyle />
             <Dashboard />
         </div>

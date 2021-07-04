@@ -1,7 +1,7 @@
 import { GlobalStyle } from './base/globalStyle';
 import { Heading, Description, Tertiary } from './atoms';
 import { Select, Checkbox } from './molecules';
-import { Options } from './organisms';
+import { Options, Calendar } from './organisms';
 
 export {
     Select,
@@ -10,5 +10,6 @@ export {
     Description,
     GlobalStyle,
     Checkbox,
-    Options
+    Options,
+    Calendar
 }

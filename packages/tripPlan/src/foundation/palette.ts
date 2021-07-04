@@ -8,7 +8,7 @@ const violet = '#8056D2';
 
 /* Neutral Colors */
 
-const gray = '#65737E';
+const gray = '#EEE';
 const rollingStone = '#73777C';
 const mineShaft = '#2D2D2D';
 
