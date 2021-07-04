@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Options should test the snapshot of the component 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-hKFxyN jfpiyA"
+    title="options"
+  >
+    <p
+      class="sc-dlnjwi sc-eCApnc ea-dfCT cqGmaj"
+      role="option-label"
+    >
+      priority
+    </p>
+    <div
+      class="sc-jSFjdj dETBGi"
+    >
+      <label
+        class="sc-gKAaRy dOQByB"
+        role="label"
+      >
+        <input
+          aria-checked="false"
+          aria-label="High"
+          class="sc-iCoGMd cHMfVY"
+          role="checkbox"
+          type="checkbox"
+        />
+        High
+      </label>
+    </div>
+    <div
+      class="sc-jSFjdj dETBGi"
+    >
+      <label
+        class="sc-gKAaRy dOQByB"
+        role="label"
+      >
+        <input
+          aria-checked="false"
+          aria-label="Normal"
+          class="sc-iCoGMd cHMfVY"
+          role="checkbox"
+          type="checkbox"
+        />
+        Normal
+      </label>
+    </div>
+    <div
+      class="sc-jSFjdj dETBGi"
+    >
+      <label
+        class="sc-gKAaRy dOQByB"
+        role="label"
+      >
+        <input
+          aria-checked="false"
+          aria-label="Low"
+          class="sc-iCoGMd cHMfVY"
+          role="checkbox"
+          type="checkbox"
+        />
+        Low
+      </label>
+    </div>
+  </div>
+</DocumentFragment>
+`;

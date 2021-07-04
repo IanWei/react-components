@@ -19,7 +19,7 @@ export const Checkbox: FC<CheckboxProps> = ({
         <StyledCheckboxWrapper>
             <StyledLabel role="label">
                 <StyledInput
-                    title="checkbox"
+                    role="checkbox"
                     aria-label={label}
                     aria-checked={isChecked}
                     type="checkbox"

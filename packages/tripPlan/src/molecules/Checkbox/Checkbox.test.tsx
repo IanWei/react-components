@@ -3,18 +3,18 @@ import { render, fireEvent, screen } from '@testing-library/react';
 import { Checkbox } from './Checkbox';
 
 describe('Checkbox', () => {
-    let checkbox: HTMLDivElement;
+    let checkbox: HTMLInputElement;
     let snapshot: () => DocumentFragment;
     const handleCheckboxChange = jest.fn();
 
     beforeEach(() => {
-        const { queryByTitle, asFragment } = render(
+        const { queryByRole, asFragment } = render(
             <Checkbox
                 label="test"
                 handleCheckboxChange={handleCheckboxChange}
             />
         );
-        checkbox = queryByTitle('checkbox') as HTMLDivElement;
+        checkbox = queryByRole('checkbox') as HTMLInputElement;
         snapshot = asFragment;
     });
 

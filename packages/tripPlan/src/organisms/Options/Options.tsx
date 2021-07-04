@@ -9,8 +9,8 @@ export const Options: FC<OptionsProps> = ({
     handleCheckboxChange
 }) => {
     return (
-        <StyledOptionWrapper>
-            <StyledOptionLabel>{label}</StyledOptionLabel>
+        <StyledOptionWrapper title="options">
+            <StyledOptionLabel role="option-label">{label}</StyledOptionLabel>
             {options.map((option) => (
                 <Checkbox
                     key={option}

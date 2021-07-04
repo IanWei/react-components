@@ -13,7 +13,7 @@ exports[`Checkbox should test the snapshot of the base state 1`] = `
         aria-checked="false"
         aria-label="test"
         class="sc-dlnjwi bUvIpl"
-        title="checkbox"
+        role="checkbox"
         type="checkbox"
       />
       test
@@ -35,7 +35,7 @@ exports[`Checkbox should test the snapshot of the toggle state 1`] = `
         aria-checked="true"
         aria-label="test"
         class="sc-dlnjwi bUvIpl"
-        title="checkbox"
+        role="checkbox"
         type="checkbox"
       />
       test
