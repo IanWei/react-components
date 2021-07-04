@@ -8,6 +8,7 @@ export const StyledSelect = styled.div`
     display: flex;
     flex-direction: column;
     position: relative;
+    width: 100%;
 `
 
 export const StyledButton = styled.button`
@@ -48,7 +49,7 @@ export const StyledMenu = styled.ul<{overlayTop: number, isOpen: boolean}>`
     margin-top: ${p => p.overlayTop}px;
     max-height: ${p => p.isOpen ? '300px' : '0px'};
     width: 100%;
-    z-index: 1;
+    z-index: 20;
     overflow-y: scroll;
     transition: all .2s ease;
     cursor: pointer;

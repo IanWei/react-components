@@ -34,7 +34,6 @@ export const Dashboard: FC = () => {
     // }, [selected]);
     return (
         <StyledDashboard>
-            <Navigate next={() => {}} prev={() => {}}/>
             <Calendar />
         </StyledDashboard>
     );

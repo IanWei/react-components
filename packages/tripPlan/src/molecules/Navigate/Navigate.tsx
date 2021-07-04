@@ -14,5 +14,5 @@ export const Navigate: FC<NavigateProps> = ({ prev, next }) => {
                 <ChevronRightIcon />
             </StyledIconWrapper>
         </StyledNavigate>
-    )
-}
+    );
+};

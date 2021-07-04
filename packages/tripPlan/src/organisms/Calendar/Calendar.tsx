@@ -1,6 +1,8 @@
 import React, { FC, useEffect, useState } from 'react';
 import dayjs, { Dayjs } from 'dayjs';
 import { CalendarProps } from './Calendar.props';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
 import {
     StyledBody,
     StyledCalendar,
@@ -8,26 +10,46 @@ import {
     StyledDayNames,
     StyledDayStyles,
     StyledHeader,
-    StyledWeek
+    StyledWeek,
+    StyledYearWrapper
 } from './Calendar.styled';
+import { Navigate } from '../../molecules/Navigate';
+import { Select } from '../../molecules/Select';
+import { getValidYearsOptions } from './utils';
+import { SelectOption } from '../../molecules/Select/Select.props';
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
+dayjs.tz.setDefault('America/New_York');
 
 export const Calendar: FC<CalendarProps> = () => {
     const [calendar, setCalendar] = useState<Dayjs[][]>([]);
-    const [] = useState();
+    const [currentDate, setCurrentDate] = useState(dayjs());
+    const [options, setOptions] = useState<SelectOption[]>([]);
 
-    const targetDay = dayjs().subtract(2, 'month').format('YYYY-MM-DD');
     useEffect(() => {
         // @ts-ignore
         window.dayjs = dayjs;
         calendarBuilder();
+    }, [currentDate]);
+
+    useEffect(() => {
+        setOptions(getValidYearsOptions());
     }, []);
 
+    const handlePrevButton = () => {
+        setCurrentDate(dayjs(currentDate).subtract(1, 'month'));
+    };
+
+    const handleNextButton = () => {
+        setCurrentDate(dayjs(currentDate).add(1, 'month'));
+    };
+
     const calendarBuilder = () => {
-        console.log(targetDay);
-        const startDay = dayjs(targetDay || new Date())
+        const startDay = dayjs(currentDate || new Date())
             .startOf('month')
             .startOf('week');
-        const endDay = dayjs(targetDay || new Date())
+        const endDay = dayjs(currentDate || new Date())
             .endOf('month')
             .endOf('week');
         let day = startDay;
@@ -46,16 +68,19 @@ export const Calendar: FC<CalendarProps> = () => {
     };
 
     const isToday = (day: Dayjs) => {
+        if (dayjs(new Date().toLocaleString()).isSame(day, 'date')) {
+            console.log(day.format('DD MM'));
+        }
         return dayjs().isSame(day, 'date');
     };
 
     const beforeCurrentMonth = (day: Dayjs) => {
-        const startDay = dayjs(targetDay).startOf('month').add(24, 'hour');
+        const startDay = dayjs(currentDate).startOf('month').add(1, 'hour');
         return dayjs(day).isBefore(startDay, 'day');
     };
 
     const afterCurrentMonth = (day: Dayjs) => {
-        const endDay = dayjs(targetDay).endOf('month').add(24, 'hour');
+        const endDay = dayjs(currentDate).endOf('month').add(1, 'hour');
         return dayjs(day).isAfter(endDay, 'day');
     };
 
@@ -66,11 +91,21 @@ export const Calendar: FC<CalendarProps> = () => {
         return '';
     };
 
+    const handleSelect = (option: SelectOption, _: number) => {
+        setCurrentDate(dayjs(option.value).add(24, 'hour'));
+    };
+
     return (
         <StyledCalendar>
             <StyledHeader>
-                <span>1</span>
-                <span>2</span>
+                <StyledYearWrapper>
+                    <Select
+                        label={currentDate.format('MMM YYYY')}
+                        options={options}
+                        onOptionSelected={handleSelect}
+                    />
+                </StyledYearWrapper>
+                <Navigate prev={handlePrevButton} next={handleNextButton} />
             </StyledHeader>
             <StyledBody>
                 <StyledDayNames>

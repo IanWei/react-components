@@ -8,7 +8,10 @@ import { device } from '../../foundation/breakpoints';
 export const StyledCalendar = styled.div`
     margin: 0 auto;
     width: 350px;    
+    border: 1px solid ${color.whiteDark};
+    box-shadow: ${shadows.base};
     font-size: ${fontSize.xs};
+    background-color: ${color.white};
     
     @media only screen and ${device.tablet} {
         width: 525px;
@@ -24,12 +27,17 @@ export const StyledHeader = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: ${spacing.xxxs};
+    margin-top: 10px;
+    padding: ${spacing.xs};
+`
+
+export const StyledYearWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    width: 120px;
 `
 
 export const StyledBody = styled.div`
-    border: 1px solid ${color.whiteDark};
-    box-shadow: ${shadows.base};
 `
 
 export const StyledDayNames = styled.div`
