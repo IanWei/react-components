@@ -1,21 +1,7 @@
 import React, { FC } from 'react';
 import { StyledDashboard } from './Dashboard.styled';
-import { Calendar, Navigate } from '@i.w/trip-plan';
-
-// const selectOptions = [
-//     {
-//         label: 'Strict Black',
-//         value: 'strict-black'
-//     },
-//     {
-//         label: 'Heavenly Green',
-//         value: 'heavenly-green'
-//     },
-//     {
-//         label: 'Sweet Pink',
-//         value: 'pink'
-//     }
-// ];
+import { Toggle, MultiCheckboxes } from '@i.w/trip-plan';
+import { toggles } from './constant';
 
 export const Dashboard: FC = () => {
     // const [selected, setSelected] = useState(new Set());
@@ -34,7 +20,7 @@ export const Dashboard: FC = () => {
     // }, [selected]);
     return (
         <StyledDashboard>
-            <Calendar />
+            <MultiCheckboxes options={toggles} onChange={() => {}} />
         </StyledDashboard>
     );
 };
